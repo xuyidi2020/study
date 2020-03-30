@@ -498,7 +498,8 @@ public final class DateUtils {
         calendar.setTime(DateUtils.parseDate(calendar.get(Calendar.YEAR) + "-"
                 + month + "-01"));
         calendar.roll(Calendar.DATE, -1);
-        return ConvertUtil.convert(calendar.get(Calendar.DAY_OF_MONTH), "30");
+        //TODO
+        return "";
     }
 
     /**
@@ -1037,8 +1038,8 @@ public final class DateUtils {
     public static boolean ifBetweenTimeRegion(String begin, String end) {
         boolean flag = false;
         try {
-            if (ValidateUtil.stringIsEmpty(begin)
-                    || ValidateUtil.stringIsEmpty(end)) {
+            if (StringUtils.isNotBlank(begin)
+                    || StringUtils.isNotBlank(end)) {
                 return false;
             }
 
